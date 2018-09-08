@@ -1,0 +1,32 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "wrong answer",
+            "intents": [
+                {"name": "AMAZON.CancelIntent", "samples": []},
+                {"name": "AMAZON.HelpIntent", "samples": []},
+                {"name": "AMAZON.StopIntent", "samples": []},
+                {
+                    "name": "StartIntent",
+                    "samples": [
+                        "start",
+                        "start wrong answer",
+                        "start the quiz",
+                        "begin",
+                        "play",
+                        "play again",
+                        "start again"
+                    ]
+                },
+                {
+                    "name": "RulesIntent",
+                    "samples": [
+                        "rules", "what are the rules", "tell me the rules", "the rules",
+                        "explain the rules", "explain the game", "explain", "speak the rules",
+                        "how does the game work", "how do I play", "how does it work"
+                    ]
+                }
+            ]
+        }
+    }
+}

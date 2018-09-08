@@ -1,0 +1,337 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "wrong answer",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "StartIntent",
+          "samples": [
+            "start",
+            "start wrong answer",
+            "start the quiz",
+            "begin",
+            "play",
+            "play again",
+            "start again"
+          ]
+        },
+        {
+          "name": "RulesIntent",
+          "samples": [
+            "rules",
+            "what are the rules",
+            "tell me the rules",
+            "the rules",
+            "explain the rules",
+            "explain the game",
+            "explain",
+            "speak the rules",
+            "how does the game work",
+            "how do I play",
+            "how does it work"
+          ]
+        },
+        {
+          "name": "QzeroRightIntent",
+          "samples": [
+            "black"
+          ]
+        },
+        {
+          "name": "QzeroWrongIntent",
+          "samples": [
+            "white"
+          ]
+        },
+        {
+          "name": "QoneRightIntent",
+          "samples": [
+            "asia"
+          ]
+        },
+        {
+          "name": "QoneWrongIntent",
+          "samples": [
+            "africa"
+          ]
+        },
+        {
+          "name": "QtwoRightIntent",
+          "samples": [
+            "three"
+          ]
+        },
+        {
+          "name": "QtwoWrongIntent",
+          "samples": [
+            "five"
+          ]
+        },
+        {
+          "name": "QthreeRightIntent",
+          "samples": [
+            "seven"
+          ]
+        },
+        {
+          "name": "QthreeWrongIntent",
+          "samples": [
+            "eight"
+          ]
+        },
+        {
+          "name": "QfourRightIntent",
+          "samples": [
+            "murder"
+          ]
+        },
+        {
+          "name": "QfourWrongIntent",
+          "samples": [
+            "corpse"
+          ]
+        },
+        {
+          "name": "QfiveRightIntent",
+          "samples": [
+            "neptune"
+          ]
+        },
+        {
+          "name": "QfiveWrongIntent",
+          "samples": [
+            "poseidon"
+          ]
+        },
+        {
+          "name": "QsixRightIntent",
+          "samples": [
+            "humerus"
+          ]
+        },
+        {
+          "name": "QsixWrongIntent",
+          "samples": [
+            "femur"
+          ]
+        },
+        {
+          "name": "QsevenRightIntent",
+          "samples": [
+            "rome"
+          ]
+        },
+        {
+          "name": "QsevenWrongIntent",
+          "samples": [
+            "athens"
+          ]
+        },
+        {
+          "name": "QeightRightIntent",
+          "samples": [
+            "ecuador"
+          ]
+        },
+        {
+          "name": "QeightWrongIntent",
+          "samples": [
+            "norway"
+          ]
+        },
+        {
+          "name": "QnineRightIntent",
+          "samples": [
+            "italy"
+          ]
+        },
+        {
+          "name": "QnineWrongIntent",
+          "samples": [
+            "greece"
+          ]
+        },
+        {
+          "name": "QtenRightIntent",
+          "samples": [
+            "jupiter"
+          ]
+        },
+        {
+          "name": "QtenWrongIntent",
+          "samples": [
+            "mercury"
+          ]
+        },
+        {
+          "name": "QelevenRightIntent",
+          "samples": [
+            "argentina"
+          ]
+        },
+        {
+          "name": "QelevenWrongIntent",
+          "samples": [
+            "brazil"
+          ]
+        },
+        {
+          "name": "QtwelveRightIntent",
+          "samples": [
+            "ringo"
+          ]
+        },
+        {
+          "name": "QtwelveWrongIntent",
+          "samples": [
+            "george"
+          ]
+        },
+        {
+          "name": "QthirteenRightIntent",
+          "samples": [
+            "armstrong"
+          ]
+        },
+        {
+          "name": "QthirteenWrongIntent",
+          "samples": [
+            "aldrin"
+          ]
+        },
+        {
+          "name": "QfourteenRightIntent",
+          "samples": [
+            "penicillin"
+          ]
+        },
+        {
+          "name": "QfourteenWrongIntent",
+          "samples": [
+            "aspirin"
+          ]
+        },
+        {
+          "name": "QfifteenRightIntent",
+          "samples": [
+            "chess"
+          ]
+        },
+        {
+          "name": "QfifteenWrongIntent",
+          "samples": [
+            "poker"
+          ]
+        },
+        {
+          "name": "QsixteenRightIntent",
+          "samples": [
+            "ice"
+          ]
+        },
+        {
+          "name": "QsixteenWrongIntent",
+          "samples": [
+            "lemon"
+          ]
+        },
+        {
+          "name": "QseventeenRightIntent",
+          "samples": [
+            "france"
+          ]
+        },
+        {
+          "name": "QseventeenWrongIntent",
+          "samples": [
+            "america"
+          ]
+        },
+        {
+          "name": "QeighteenRightIntent",
+          "samples": [
+            "seventies"
+          ]
+        },
+        {
+          "name": "QeighteenWrongIntent",
+          "samples": [
+            "eighties"
+          ]
+        },
+        {
+          "name": "QnineteenRightIntent",
+          "samples": [
+            "doctor who"
+          ]
+        },
+        {
+          "name": "QnineteenWrongIntent",
+          "samples": [
+            "star trek"
+          ]
+        },
+        {
+          "name": "QtwentyzeroRightIntent",
+          "samples": [
+            "bicycle"
+          ]
+        },
+        {
+          "name": "QtwentyzeroWrongIntent",
+          "samples": [
+            "car"
+          ]
+        },
+        {
+          "name": "QtwentyoneRightIntent",
+          "samples": [
+            "beagle"
+          ]
+        },
+        {
+          "name": "QtwentyoneWrongIntent",
+          "samples": [
+            "enterprise"
+          ]
+        },
+        {
+          "name": "QtwentytwoRightIntent",
+          "samples": [
+            "russia"
+          ]
+        },
+        {
+          "name": "QtwentytwoWrongIntent",
+          "samples": [
+            "canada"
+          ]
+        },
+        {
+          "name": "QtwentythreeRightIntent",
+          "samples": [
+            "bing"
+          ]
+        },
+        {
+          "name": "QtwentythreeWrongIntent",
+          "samples": [
+            "geller"
+          ]
+        }
+      ]
+    }
+  }
+}

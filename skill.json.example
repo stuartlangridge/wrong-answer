@@ -1,0 +1,40 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-GB": {
+          "summary": "The quiz where you need to get the answers wrong!",
+          "examplePhrases": [
+            "Alexa, launch Wrong Answer",
+            "Alexa, open Wrong Answer"
+          ],
+          "keywords": ["quiz","trivia","game","questions","timed"],
+          "name": "Wrong Answer",
+          "smallIconUri": "...",
+          "description": "Race against the clock to answer all the questions and win before the time runs out... but you need to answer them all incorrectly! Get one right, and you go all the way back to the beginning. Can you beat the clock and stay... Incorrect?",
+          "largeIconUri": "..."
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "No special testing instruction required.",
+      "category": "EDUCATION_AND_REFERENCE",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/custom"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}
