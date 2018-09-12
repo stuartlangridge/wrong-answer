@@ -22,5 +22,15 @@ module.exports = [
     ["Was a penny farthing a bicycle or a car?", "Bicycle", "Car"],
     ["Did Charles Darwin travel on the Beagle or the Enterprise?", "Beagle", "Enterprise"],
     ["Was Alaska purchased by the United States from Canada or Russia?", "Russia", "Canada"],
-    ["In Friends, was Chandler's last name Geller or Bing?", "Bing", "Geller"]
+    ["In Friends, was Chandler's last name Geller or Bing?", "Bing", "Geller"],
+    ["Is Woody Harrelson’s middle name Larry or Tracy?", "Tracy", "Larry"],
+    ["Was Cary Grant born in the English city of Bristol or Brighton?", "Bristol", "Brighton"],
+    ["Was Richard Daley the 21-year mayor of New York or Chicago?", "Chicago", "New York"],
+    ["Is the medulla oblongata in the brain or in the heart?", "Brain", "Heart"],
+    ["Is Asuncion the capital of Paraguay or Uruguay?", "Paraguay", "Uruguay"],
+    ["Do lobsters have ten legs or six?", "Ten", "Six"],
+    ["Is the softest mineral on the Mohs Scale diamond or talc?", "Talc", "Diamond"],
+    ["Was the Egyptian god of embalming and the dead Horus or Anubis?", "Anubis", "Horus"],
+    ["Is edelweiss the national flower of Switzerland or Austria?", "Austria", "Switzerland"],
+    ["Is thirty four plus twenty six equal to fifty or sixty?", "Sixty", "Fifty"]
 ];

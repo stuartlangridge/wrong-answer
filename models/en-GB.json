@@ -330,6 +330,126 @@
           "samples": [
             "geller"
           ]
+        },
+        {
+          "name": "QtwentyfourRightIntent",
+          "samples": [
+            "tracy"
+          ]
+        },
+        {
+          "name": "QtwentyfourWrongIntent",
+          "samples": [
+            "larry"
+          ]
+        },
+        {
+          "name": "QtwentyfiveRightIntent",
+          "samples": [
+            "bristol"
+          ]
+        },
+        {
+          "name": "QtwentyfiveWrongIntent",
+          "samples": [
+            "brighton"
+          ]
+        },
+        {
+          "name": "QtwentysixRightIntent",
+          "samples": [
+            "chicago"
+          ]
+        },
+        {
+          "name": "QtwentysixWrongIntent",
+          "samples": [
+            "new york"
+          ]
+        },
+        {
+          "name": "QtwentysevenRightIntent",
+          "samples": [
+            "brain"
+          ]
+        },
+        {
+          "name": "QtwentysevenWrongIntent",
+          "samples": [
+            "heart"
+          ]
+        },
+        {
+          "name": "QtwentyeightRightIntent",
+          "samples": [
+            "paraguay"
+          ]
+        },
+        {
+          "name": "QtwentyeightWrongIntent",
+          "samples": [
+            "uruguay"
+          ]
+        },
+        {
+          "name": "QtwentynineRightIntent",
+          "samples": [
+            "ten"
+          ]
+        },
+        {
+          "name": "QtwentynineWrongIntent",
+          "samples": [
+            "six"
+          ]
+        },
+        {
+          "name": "QthirtyzeroRightIntent",
+          "samples": [
+            "talc"
+          ]
+        },
+        {
+          "name": "QthirtyzeroWrongIntent",
+          "samples": [
+            "diamond"
+          ]
+        },
+        {
+          "name": "QthirtyoneRightIntent",
+          "samples": [
+            "anubis"
+          ]
+        },
+        {
+          "name": "QthirtyoneWrongIntent",
+          "samples": [
+            "horus"
+          ]
+        },
+        {
+          "name": "QthirtytwoRightIntent",
+          "samples": [
+            "austria"
+          ]
+        },
+        {
+          "name": "QthirtytwoWrongIntent",
+          "samples": [
+            "switzerland"
+          ]
+        },
+        {
+          "name": "QthirtythreeRightIntent",
+          "samples": [
+            "sixty"
+          ]
+        },
+        {
+          "name": "QthirtythreeWrongIntent",
+          "samples": [
+            "fifty"
+          ]
         }
       ]
     }
