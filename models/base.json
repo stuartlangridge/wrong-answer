@@ -6,6 +6,18 @@
                 {"name": "AMAZON.CancelIntent", "samples": []},
                 {"name": "AMAZON.HelpIntent", "samples": []},
                 {"name": "AMAZON.StopIntent", "samples": []},
+                
+                {"name": "AMAZON.PreviousIntent", "samples": []},
+                {"name": "AMAZON.NextIntent", "samples": []},
+                {"name": "AMAZON.MoreIntent", "samples": []},
+                {"name": "AMAZON.ScrollLeftIntent", "samples": []},
+                {"name": "AMAZON.ScrollRightIntent", "samples": []},
+                {"name": "AMAZON.ScrollUpIntent", "samples": []},
+                {"name": "AMAZON.ScrollDownIntent", "samples": []},
+                {"name": "AMAZON.PageUpIntent", "samples": []},
+                {"name": "AMAZON.PageDownIntent", "samples": []},
+                {"name": "AMAZON.NavigateSettingsIntent", "samples": []},
+                {"name": "AMAZON.NavigateHomeIntent", "samples": []},
                 {
                     "name": "StartIntent",
                     "samples": [

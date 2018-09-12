@@ -50,6 +50,55 @@ function getSessionQuestions(count) {
   return qids;
 }
 
+function supportsDisplay(handlerInput) {
+  const hasDisplay =
+    handlerInput.requestEnvelope.context &&
+    handlerInput.requestEnvelope.context.System &&
+    handlerInput.requestEnvelope.context.System.device &&
+    handlerInput.requestEnvelope.context.System.device.supportedInterfaces &&
+    handlerInput.requestEnvelope.context.System.device.supportedInterfaces
+      .Display;
+  console.log("hasDisplay", hasDisplay);
+  return hasDisplay;
+};
+
+function makeDisplay(image, question, tl) {
+  var q, i;
+  if (!question) {
+    q = "Wrong Answer";
+  } else {
+    if (Math.random() < 0.5) {
+      q = question[1] + " or " + question[2];
+    } else {
+      q = question[2] + " or " + question[1];
+    }
+  }
+  if (isNaN(image)) {
+    i = image;
+  } else {
+    var c;
+    if (tl < 15) { c = 5; }
+    else if (tl < 30) { c = 4; }
+    else if (tl < 45) { c = 3; }
+    else if (tl < 60) { c = 2; }
+    else if (tl < 75) { c = 1; }
+    else { c = 0; }
+    i = "c" + c + "s" + image;
+  }
+  var imgurl = "https://kryogenix.org/code/wrong-answer/scoreimages/" + i + ".png";
+
+  const imgh = new Alexa.ImageHelper()
+        .addImageInstance(imgurl)
+        .getImage();
+  return {
+    type: "BodyTemplate7",
+    token: "wrong-answer",
+    backButton: "HIDDEN",
+    title: q,
+    image: imgh
+  }
+}
+
 /********************************************************************** 
     Core AMAZON Intents
 ***********************************************************************/
@@ -66,7 +115,8 @@ const HelpIntentHandler = {
       'from the beginning. You have 90 ' +
       'seconds to get as far as you can. Good luck! Now, say start to play Wrong Answer!'
 
-    return handlerInput.responseBuilder
+    const rb = handlerInput.responseBuilder;
+    return rb
       .speak(speechText)
       .reprompt(speechText)
       .getResponse();
@@ -82,7 +132,8 @@ const CancelAndStopIntentHandler = {
   handle(handlerInput) {
     const speechText = "Thanks for playing Wrong Answer! <audio src='https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_outro_01.mp3'/> Goodbye!";
 
-    return handlerInput.responseBuilder
+    const rb = handlerInput.responseBuilder;
+    return rb
       .speak(speechText)
       .getResponse();
   },
@@ -109,7 +160,8 @@ const ErrorHandler = {
   handle(handlerInput, error) {
     console.log(`Error handled: ${error.message}`);
 
-    return handlerInput.responseBuilder
+    const rb = handlerInput.responseBuilder;
+    return rb
       .speak('Please say that again?')
       .reprompt('Please say that again?')
       .getResponse();
@@ -129,7 +181,11 @@ const LaunchRequestHandler = {
       'Welcome to Wrong Answer, the trivia quiz where you have to get the ' +
       'answers wrong! You can ask me to explain the rules, or say start to play.';
 
-    return handlerInput.responseBuilder
+    const rb = handlerInput.responseBuilder;
+    if (supportsDisplay(handlerInput)) {
+      rb.addRenderTemplateDirective(makeDisplay("screen-logo"));
+    }
+    return rb
       .speak(speechText)
       .reprompt(speechText)
       .getResponse();
@@ -153,7 +209,11 @@ const StartIntentHandler = {
     const speechText = "Let's play Wrong Answer! " +
     "<audio src='https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_bridge_02.mp3'/> " + q1;
 
-    return handlerInput.responseBuilder
+    const rb = handlerInput.responseBuilder;
+    if (supportsDisplay(handlerInput)) {
+      rb.addRenderTemplateDirective(makeDisplay("c0s0", QUESTIONS[attrs.qids[attrs.q]]));
+    }
+    return rb
       .speak(speechText)
       .reprompt(q1)
       .getResponse();
@@ -173,7 +233,11 @@ const RulesIntentHandler = {
       'from the beginning. You have 90 ' +
       'seconds to get as far as you can. Good luck! Now, say start to play Wrong Answer!';
 
-    return handlerInput.responseBuilder
+    const rb = handlerInput.responseBuilder;
+    if (supportsDisplay(handlerInput)) {
+      rb.addRenderTemplateDirective(makeDisplay("screen-logo"));
+    }
+    return rb
       .speak(speechText)
       .reprompt(speechText)
       .getResponse();
@@ -225,7 +289,11 @@ function checkTimeLeft(attrs, handlerInput, speechText) {
           "You got to question " + qto + " which is " + rank + " " +
           "<audio src='https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_outro_01.mp3'/> " +
           "You can say start to play again, or stop to stop playing Wrong Answer.";
-        return handlerInput.responseBuilder
+        const rb = handlerInput.responseBuilder;
+        if (supportsDisplay(handlerInput)) {
+          rb.addRenderTemplateDirective(makeDisplay("screen-logo"));
+        }
+        return rb
                 .speak(s)
                 .reprompt("You can say start to play again, or stop to stop playing Wrong Answer.")
                 .getResponse();
@@ -274,7 +342,11 @@ function makeQuestionHandlers() {
                         speechText = '<speak><prosody rate="fast">' + speechText + '</prosody></speak>';
                     }
 
-                    return handlerInput.responseBuilder
+                    const rb = handlerInput.responseBuilder;
+                    if (supportsDisplay(handlerInput)) {
+                      rb.addRenderTemplateDirective(makeDisplay(attrs.q, QUESTIONS[attrs.qids[attrs.q]], getTimeLeft(attrs)));
+                    }
+                    return rb
                         .speak(speechText)
                         .reprompt(newQuestion)
                         .getResponse();
@@ -304,7 +376,11 @@ function makeQuestionHandlers() {
 
                     attrs.q += 1;
                     if (attrs.q >= attrs.qids.length) {
-                        return handlerInput.responseBuilder
+                        const rb = handlerInput.responseBuilder;
+                        if (supportsDisplay(handlerInput)) {
+                          rb.addRenderTemplateDirective(makeDisplay("c6s9"));
+                        }
+                        return rb
                                 .speak(speechText + "That's all the questions done! You win! " +
                                   "<audio src='https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_outro_01.mp3'/>" +
                                   "You can say start to play again, or stop to stop playing Wrong Answer.")
@@ -315,7 +391,11 @@ function makeQuestionHandlers() {
                     var newQuestion = QUESTIONS[attrs.qids[attrs.q]][0];
                     speechText += newQuestion;
 
-                    return handlerInput.responseBuilder
+                    const rb = handlerInput.responseBuilder;
+                    if (supportsDisplay(handlerInput)) {
+                      rb.addRenderTemplateDirective(makeDisplay(attrs.q, QUESTIONS[attrs.qids[attrs.q]], getTimeLeft(attrs)));
+                    }
+                    return rb
                         .speak(speechText)
                         .reprompt(newQuestion)
                         .getResponse();
@@ -335,7 +415,8 @@ function makeQuestionHandlers() {
                     const attrs = handlerInput.attributesManager.getSessionAttributes();
                     var speechText = "Your game is over. " +
                       "You can say start to try playing again, or stop to stop playing Wrong Answer. Maybe you'll win this time!";
-                    return handlerInput.responseBuilder
+                    const rb = handlerInput.responseBuilder;
+                    return rb
                             .speak(speechText)
                             .reprompt("You can say start to try playing again, or stop to stop playing Wrong Answer.")
                             .getResponse();

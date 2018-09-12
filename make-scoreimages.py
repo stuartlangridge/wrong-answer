@@ -36,8 +36,9 @@ for t in range(len(TIMES)+1):
         fp = open("/tmp/score-temp.svg", mode="w", encoding="utf-8")
         fp.write(dom.toxml())
         fp.close()
-        os.system("convert -background none /tmp/score-temp.svg -resize 400x400 scoreimages/{}.png".format(name))
+        os.system("convert -size 450x450 xc:none -background none -gravity center /tmp/score-temp.svg -composite scoreimages/{}.png".format(name))
         os.system("convert -size 1920x1080 xc:none scoreimages/{}.png -geometry +764+239 -composite video/scoreimages/{}.png".format(name, name))
         print("{:>4}. Set {} + {} on as {}".format(count, ",".join(thesetimes), ",".join(thesescores), name))
+os.system("cp screen-logo.png scoreimages/")
 
 
